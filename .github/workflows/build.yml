@@ -37,7 +37,7 @@ jobs:
         run: west build -s zmk/app -b nrfmicro_13 -- -DSHIELD=lily58_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Lily58 DTS File
         if: ${{ always() }}
-        run: cat -n build/zephyr/nice_nano.dts.pre.tmp
+        run: cat -n build/zephyr/nrf_micro.dts.pre.tmp
       - name: Lily58 Left Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
